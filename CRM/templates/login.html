@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% if option==1 %}
+                Login in
+            {% endif %}
+            {% if option==2 %}
+                Forgot Password
+            {% endif %}
+            {% if option==3 %}
+                Forgot Password
+            {% endif %}
+            {% if option==4 %}
+                Password Resetted
+            {% endif %}
+            {% if option==5 %}
+                Create account
+            {% endif %}
+            {% if option==6 %}
+                Create account
+            {% endif %}
+            {% if option==7 %}
+                Create account
+            {% endif %}
+            {% if option==8 %}
+                Account Created
+            {% endif %}
+            {% if option==9 %}
+                Forgot Password
+            {% endif %}
+            {% if option==10 %}
+                Activate your account
+            {% endif %}
+            
+            
+
+
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/static/script/script.js"></script>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/style2.css" type="text/css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/heroes.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid screen">
+            <div class="row  navigation">
+                <div class="col-12 navigation-col">
+
+                    <nav class="navbar nav-color navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+                        <a class="navbar-brand" href="/">
+                            {% if option==1 %}
+                                Login into your Account
+                            {% endif %}
+                            {% if option==2 %}
+                                Enter your email to reset
+                            {% endif %}
+                            {% if option==3 %}
+                                Enter the verrification code
+                            {% endif %}
+                            {% if option==4 %}
+                                Password Resetted
+                            {% endif %}
+                            {% if option==5 %}
+                                Enter your email to Create account
+                            {% endif %}
+                            {% if option==6 %}
+                                Enter the verification code
+                            {% endif %}
+                            {% if option==7 %}
+                                Enter your details
+                            {% endif %}
+                            {% if option==8 %}
+                                {% if key==1 %}
+                                Account already Created
+                                {% else %}
+                                Account Created
+                                {% endif %}
+                                
+                            {% endif %}
+                            {% if option==9 %}
+                                Set new Password
+                            {% endif %}
+                            {% if option==10 %}
+                                Activate your account
+                            {% endif %}
+                        </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Login Page -->
+            {% if option==1 %}
+            <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+                <div class="row align-items-center g-lg-5 py-5">
+                  <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 mb-3">Class Room Management</h1>
+                    <p class="col-lg-10 fs-4">CRM is an application for the GITAM for class rooms management.</p>
+                  </div>
+                  <div class="col-md-10 login-account-container mx-auto col-lg-5">
+                    <form class="p-4 p-md-5 login-account-container rounded-3 bg-light" method="POST" action="/check">
+                        {% if key==1 %}
+                            <p>You already have an account</p>
+                        {% endif %}
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="Enter email" name="email" required>
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      {% if nr==1 %}
+                    <div>
+                        <p class="danger">Email not registered!</p>
+                    </div>
+                  {% endif %}
+                      <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <br>
+                        {% if invalid==1 %}
+                        <div>
+                            <p class="danger">Invalid Credentials!</p>
+                        </div>
+                        {% endif %}
+                        <div class="center-text">
+                            <a href="/forgot_password">Forgot Password?</a>
+                        </div>
+                        
+                        <br>
+                      <button class="w-100 btn btn-lg btn-primary" type="submit" value="Login">Sign in</button>
+                      <hr class="my-4">
+                      <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                      <div class="center-text"><a href="/create_account/send_verification">Don't have an account? Sign up</a></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+
+            <!-- Forgot Password Enter email -->
+            {% if option==2 %}
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/forgot_password/verify_code" class="col-mid-4 " >
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail2">Email address</label>
+                                                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Enter your email Address" name="email" required>
+                                            </div>
+                                            
+                                            <br>
+                                            {% if invalid==1 %}
+                                            <div class="danger">
+                                                <p>Email ID not registered!</p>
+                                            </div>
+                                            {% endif %}
+                                            <br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Send OTP">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            {% endif %}
+
+            <!-- Forgot Password Verification Code -->
+
+            {% if option==3 %}
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/forgot_password/check_code" class="col-mid-4 " >
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Enter Verification Code</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Verification Code" name="verification_code" required>
+                                            </div>
+                                            
+                                            <br>
+                                            {% if invalid==1 %}
+                                            <div class="danger">
+                                                <p>Invalid Verification Code!</p>
+                                            </div>
+                                            {% endif %}
+                                            <br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Verify">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- Set up new password -->
+            {% if option==9 %}
+            
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/forgot_password/check_password" class="col-mid-4 " >
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Enter a new Password <span class="danger">*</span></label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Confirm your Password <span class="danger">*</span></label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password" required>
+                                            </div>
+
+                                            <br>
+                                            {% if invalid==1 %}
+                                            <div class="danger">
+                                                <p>Password not matched!</p>
+                                            </div>
+                                            {% endif %}
+                                            <br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit"  value="Submit">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!--Successfully Resetted the password-->
+            {% if option==4 %}
+
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/login" class="col-mid-4 " >
+                                            <div class="form-group message">
+                                                <p>You have successfully resetted your password.</p>    
+                                            </div>
+                                            
+                                            <br><br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit"  value="Return to Login">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Enter email address for account creation -->
+
+            {% if option==5 %}
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/create_account/verify_code" class="col-mid-4 " >
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail2">Email address</label>
+                                                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="Enter your email Address" name="email" required>
+                                            </div>
+                                            
+                                            <br>
+                                            {% if invalid==1 %}
+                                            <div class="danger">
+                                                <p>Invalid email ID!</p>
+                                            </div>
+                                            {% endif %}
+                                            <br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Send OTP">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            {% endif %}
+
+            {% if option==6 %}
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/create_account/check_code" class="col-mid-4 " >
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Enter Verification Code</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Verification Code" name="verification_code" required>
+                                            </div>
+                                            
+                                            <br>
+                                            {% if invalid==1 %}
+                                            <div class="danger">
+                                                <p>Invalid Verification Code!</p>
+                                            </div>
+                                            {% endif %}
+                                            <br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Verify">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            {% endif %}
+
+            {% if option==7 %}
+                {% if key==1 %}
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col  create-account-content">
+                                <div class="container-fluid  create-account-container">
+                                    <div class="row ">
+                                        <div class="col create-content">
+                                            <form method="POST" action="/account_modified" class="col-mid-4 " enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label for="exampleDropdownFormEmail2">Email address</label>
+                                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2"  name="email" value="{{ data[3] }}" disabled>
+                                                </div>
+    
+                                                <div class="form-group">
+                                                    <label for="exampleDropdownFormEmail2">Name {% if data[2]==None %}<span class="danger">*</span>{% endif %}</label>
+                                                    {% if data[0]==None %}
+                                                        <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Name" name="name" required>
+                                                    {% else %}
+                                                        <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="{{ data[0] }}" name="name" value="{{ data[0] }}">
+                                                    {% endif %}
+                                                </div>  
+                                                <div class="form-group">
+                                                    <label for="exampleDropdownFormEmail2">Date of Birth {% if data[3]==None %}<span class="danger">*</span>{% endif %}</label>
+                                                    {% if data[3]==None %}
+                                                        <input type="date" class="form-control" id="exampleDropdownFormEmail2" name="dob" required>
+                                                    {% else %}
+                                                        <input type="date" class="form-control" id="exampleDropdownFormEmail2" name="dob" value="-1">
+                                                    {% endif %}
+                                                </div>
+                                                
+                                                <label>Gender {% if data[4]==None %}<span class="danger">*</span>{% endif %}</label>
+                                                <div class="form-check">
+                                                    <div class="form-check">
+                                                        {% if data[4]==0 %}
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" checked>
+                                                        {% else %}
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0">
+                                                        {% endif %}
+                                                        
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Male
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        {% if data[4]==1 %}
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" checked>
+                                                        {% else %}
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1">
+                                                        {% endif %}
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Female
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        {% if data[4]==2 %}
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" checked>
+                                                        {% else %}
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2">
+                                                        {% endif %}
+                                                        <label class="form-check-label" for="flexRadioDefault3">
+                                                            Others
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                
+    
+                                                <div class="form-group">
+                                                    <label for="formFile" class="form-label">Profile Picture</label>
+                                                    <input class="form-control" type="file" id="formFile" name="profile_picture" value="">
+                                                </div>
+                                                <br>
+                                                
+                                                <br>
+                                                <div class="submit-button">
+                                                    <input class="w-100 btn btn-lg btn-primary" type="submit" value="Submit">
+                                                
+                                                </div>
+                                                <div><br></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+    
+                </div>
+
+                {% else %}
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col  create-account-content">
+                                <div class="container-fluid  create-account-container">
+                                    <div class="row ">
+                                        <div class="col create-content">
+                                            <form method="POST" action="/account_created" class="col-mid-4 " enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label for="exampleDropdownFormEmail2">Email address</label>
+                                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2"  name="email" value="{{ mail }}" disabled>
+                                                </div>
+    
+                                                <div class="form-group">
+                                                    <label for="exampleDropdownFormEmail2">Name <span class="danger">*</span></label>
+                                                    <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Name" name="name" required>
+                                                </div>  
+                                                <div class="form-group">
+                                                    <label for="exampleDropdownFormEmail2">Date of Birth <span class="danger">*</span></label>
+                                                    <input type="date" class="form-control" id="exampleDropdownFormEmail2" name="dob" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleDropdownFormEmail2">GITAM ID <span class="danger">*</span></label>
+                                                    <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Gitam ID" name="gid" required>
+                                                </div> 
+
+                                                <label>Gender <span class="danger">*</span></label>
+                                                <div class="form-check">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Male
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Female
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" checked>
+                                                        <label class="form-check-label" for="flexRadioDefault3">
+                                                            Others
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                
+    
+                                                <div class="form-group">
+                                                    <label for="formFile" class="form-label">Profile Picture</label>
+                                                    <input class="form-control" type="file" id="formFile" name="profile_picture" value="">
+                                                </div>
+    
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Enter a new Password <span class="danger">*</span></label>
+                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Confirm your Password <span class="danger">*</span></label>
+                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password" required>
+                                                </div>
+                                                <br>
+                                                {% if invalid==1 %}
+                                                <div class="danger">
+                                                    Password not matched!
+                                                </div>
+                                                {% endif %}
+                                                <br>
+                                                <div class="submit-button">
+                                                    <input class="w-100 btn btn-lg btn-primary" type="submit" value="Submit">
+                                                
+                                                </div>
+                                                <div><br></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+    
+                </div>
+
+                {% endif %}
+
+            {% endif %}
+            
+
+
+            
+            {% if option==8 %}
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col create-account-content">
+                            <div class="container-fluid create-account-container">
+                                <div class="row">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/login" class="col-mid-4 " >
+                                            <div class="form-group message">
+                                                {% if key==1 %}
+                                                <p>You already have an account try logging in.</p>
+                                                <p>If you forgot password try resetting your password</p>
+                                                {% else %}
+                                                <p>You have successfully Registered.</p>   
+
+                                                {% endif %} 
+                                            </div>
+                                            
+                                            <br><br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Return to Login">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            {% endif %}   
+            
+            {% if option==10 %}
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <div>
+                                            We have found your details on our database and the account is not activated yet<br>
+                                            Details:<br>
+                                            <ul class="list-unstyled mt-3 mb-4">
+                                                <p><b>Email ID: </b>{{d[0]}}</p>
+                                                <p><b>GITAM ID: </b>{{d[1]}}</p>
+                                            </ul>
+                                        </div>
+                                        <form method="POST" action="/activate_account/check_code" class="col-mid-4 " >
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Enter Verification Code</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Verification Code" name="verification_code" required>
+                                            </div>
+                                            
+                                            <br>
+                                            {% if invalid==1 %}
+                                            <div class="danger">
+                                                <p>Invalid Verification Code!</p>
+                                            </div>
+                                            {% endif %}
+                                            <br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Verify">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            
+            {% endif %}
+            {% if option==11 %}
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col  create-account-content">
+                            <div class="container-fluid  create-account-container">
+                                <div class="row ">
+                                    <div class="col create-content">
+                                        <form method="POST" action="/account_activated" class="col-mid-4 " enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail2">Email address</label>
+                                                <input type="email" class="form-control" id="exampleDropdownFormEmail2"  name="email" value="{{ mail }}" disabled>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail2">Name <span class="danger">*</span></label>
+                                                <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Name" name="name" required>
+                                            </div>  
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail2">Date of Birth <span class="danger">*</span></label>
+                                                <input type="date" class="form-control" id="exampleDropdownFormEmail2" name="dob" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail2">GITAM ID <span class="danger">*</span></label>
+                                                <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="{{gid}}" name="gid" disabled>
+                                            </div> 
+
+                                            <label>Gender <span class="danger">*</span></label>
+                                            <div class="form-check">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Male
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Female
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" checked>
+                                                    <label class="form-check-label" for="flexRadioDefault3">
+                                                        Others
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            
+
+                                            <div class="form-group">
+                                                <label for="formFile" class="form-label">Profile Picture</label>
+                                                <input class="form-control" type="file" id="formFile" name="profile_picture" value="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Enter a new Password <span class="danger">*</span></label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Confirm your Password <span class="danger">*</span></label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password" required>
+                                            </div>
+                                            <br>
+                                            {% if invalid==1 %}
+                                            <div class="danger">
+                                                Password not matched!
+                                            </div>
+                                            {% endif %}
+                                            <br>
+                                            <div class="submit-button">
+                                                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Submit">
+                                            
+                                            </div>
+                                            <div><br></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+classes: (admin view can create update delete ) (anyone can read)
+	created_by	:
+	class ID	:
+	room_id		: id references from room
+	faculty ID	: references from user
+	incharge ID	: default 0 
+	session time	: 1 2 3 4 5 6 hrs
+	weekday		: 0 1 2 3 4 5 6 
+	start time	: time id references time
+	end time	: should be calculated
+	availability	: 0 or 1
+	temporary	: 0 or 1
+	remarks		: 
+
+
+	
+time: ()
+	time_id		: auto increment
+	time		: 0 to 23
+	
+user: (anyone can create update)
+	user ID		:
+	Gitam ID	: 
+	email		:
+	name		:
+	dob		:
+	gender		:
+	password	:
+	pp		:
+	joined_time	:
+	last updated	:
+	phone number	:
+	description	:
+	role		: default(2) admin(1) 
+	
+booking: (faculty view)
+	booking ID	:
+	class ID	:
+	faculty ID	: 
+	reason		:
+	
+rooms:
+	room_id		:
+	Room number	:
+	room name	:
+	date joined	:	
+	
+
+
+
+

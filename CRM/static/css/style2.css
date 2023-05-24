@@ -1,0 +1,1154 @@
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+  }
+  .bg-dark{
+    background-color: #d1b0d3!important;
+  }
+  .nav-link{
+    color: rgba(0,0,0,.9);
+  }
+  .nav-link.active{
+    color:rgba(0,0,0,.9);
+  }
+  .navbar-brand {
+    color: rgba(0,0,0,.9);
+  }
+  .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: #000;
+  }
+  .hover-link:hover{
+    color: #656565;
+  }
+  .dropdown-menu.show{
+    background-color: #9b5c9f!important;
+  }
+  .dropdown-item{
+    color: #000000;
+  }
+  .navbar-toggler{
+    color: #9b5c9f!important;
+  
+  }
+  
+  .details-of-user{
+    background-color: #d1b0d3;
+    border-radius: 1em;
+  
+  }
+  
+  body{
+    background-color:#d6ede4;
+    border-radius: 2px;
+  }
+  
+  .side-nav-item:hover{
+    color: #f1f1f1;
+  }
+  
+  .side-nav-item{
+    margin:10px;
+  }
+  
+  .dropdown a:hover{
+    color:#000000;
+    background-color: #d1b0d3!important;
+  }
+  .screen{
+    width:100%;
+  }
+  .row .navigation{
+    height: 70px;
+  }
+  
+  .bg-light{
+    width:100%;
+  }
+  .navigation{
+    top:0;
+    width:100%;
+    flex-wrap: wrap;  
+    margin-left: 0;
+  }
+  
+  .navigation-col{
+    height: 56px;
+  }
+  
+  .topbar-text{
+    font-family: system-ui;
+  }
+  .sidebar{
+    width:23%;
+    position:fixed;
+    margin-left: 5%;
+  
+  }
+  
+  .admin-all-users{
+    background-color: #d1b0d3;
+    border-radius: 1em;
+  }
+  
+  .admin-user-box{
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .admin-options-column-button{
+    text-align: center;
+  }
+  .admin-options-column{
+    margin: auto;
+  }
+  
+  .admin-options-column-button-btn{
+    margin: auto;
+  }
+  
+  button.btn.btn-secondary.dropdown-toggle.show{
+    margin: auto;
+  }
+  
+  .inside-sidebar{
+    margin-top: 30px;
+    padding: 0 0 0 0;
+  }
+  
+  .inside-rightsidebar{
+    margin-top: 30px;
+    padding: 0 0 0 0;
+  }
+  
+  .inside-sidebar-row{
+    background-color: #d1b0d3;
+    border-radius: 1em;
+  }
+  
+  .inside-rightsidebar-row{
+    background-color: #d1b0d3;
+    border-radius: 1em;
+  }
+  
+  
+  
+  .inside-rightsidebar-row-2{
+    background-color:#d1b0d3 ;
+    border-radius: 1em;
+  }
+  
+  .side-content{
+    margin-top: 20px;
+  }
+  
+  .full-screen-image{
+    height: calc(100vh - 100px);
+    width: fit-content;
+  }
+  
+  .fcsi-row{
+    text-align: center;
+    margin: auto;
+  }
+  
+  .fsci-col{
+    height: calc(100vh - 100px);
+    width: fit-content;
+    margin: auto;
+  }
+  
+  .main-content{
+    width:50%;
+    margin-left:30%;
+    margin-right: 25%;
+    overflow: auto;
+    height: calc(100vh - 100px);
+  }
+  .page-content{
+    margin-top: 0px;
+  }
+  .scroll{
+    height:auto;
+    overflow: auto;
+    margin-top: 30px;
+    padding: 0px;
+    
+  }
+  .scroll-b{
+    height:auto;
+    overflow: auto;
+    margin-top: 30px;
+    padding: 0px;
+  
+  }
+  
+  .modal-header{
+    background-color: #9b5c9f!important;
+  }
+  
+  .user-details-in-post-sub{
+    background-color: #9b5c9f!important;
+    border-radius: 0.8em;
+  }
+  
+  .modal-body{
+    background-color: #d1b0d3!important;
+  }
+  
+  .modal-footer{
+    background-color: #9b5c9f!important;
+  
+  }
+  
+  .name{
+    font-size: xx-large;
+    font-weight: 800;
+  }
+  .account-posts-row-column{
+    margin-left: 5%;
+  }
+  
+  .account-posts-row-column-2{
+    margin-left: 0px;
+  }
+  .education{
+    margin-left: 5% ;
+  }
+  
+  .name-container{
+    margin: auto;
+  }
+  
+  .account-ffp{
+    margin: auto;
+    text-align: center;
+  }
+  
+  .account-edit{
+    margin: auto;
+    text-align: center;
+    background-color: #aa60d8f0;
+    border-radius: 0.5em;
+  }
+  
+  .edit-post-image{
+    max-height: 200px;
+    max-width:inherit;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  
+  .edit-post-image-row{
+    margin: auto;
+    text-align: center;
+  }
+  .leftmain-content{
+    width:70%;
+    margin-left:5%;
+    margin-right:35%;
+    overflow: auto;
+    height: calc(100vh - 100px);
+  }
+  
+  .feed-container{
+    padding: 20px 0px 20px 0px;
+  }
+  .feed-block{
+    height: fit-content;
+    padding: 5px 5px 5px 5px;
+    
+  }
+  .feed-user-details{
+    padding:2px 2px 2px 2px;
+    background-color: #9b5c9f!important;
+    border-top-left-radius: 0.8em;
+    border-top-right-radius: 0.8em;
+  }
+  .feed-title{
+    margin-top: 10px;
+  }
+  
+  .feed-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .feed-edit-btn{
+    width: 100%;
+  }
+  
+  .col-2.feed-user-image {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: auto;  
+  }
+  .feed-user-details .feed-image{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 5px 5px 5px 5px;
+  
+  }
+  .user-details-in-post{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+  .update-account-content{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .update-account-image{
+    margin: auto;
+    text-align: center;
+    background-color: #a05ed6f0;
+    border-top-left-radius:1em ;
+    border-top-right-radius: 1em;
+  }
+  
+  .post-content{
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+  }
+  
+  .post-message{
+    min-height: 100px;
+  }
+  
+  .account-header{
+    margin-top: 50px;
+    height: 150px;
+    margin-bottom:30px ;
+  }
+  
+  .account-name{
+    height: 90px;
+    background-color:#ac68d6f0;
+    border-top-left-radius:0.8em ;
+    border-top-right-radius: 0.8em;
+  }
+  .account-details{
+    height: 58px;
+    background-color:#caadddf0;
+  
+  }
+  .top-name{
+    margin-top: 10px;
+  }
+  .account-main-content{
+    width:65%;
+    margin-left:5%;
+    margin-right:30%;
+    overflow: auto;
+    height: calc(100vh - 100px);
+    }
+  .admin-account-main-content{
+    width:65%;
+    margin-left:5%;
+    margin-right:30%;
+    overflow: auto;
+    height: calc(100vh - 100px);
+    }
+  
+  .rightsidebar{
+    width: 20%;
+    margin-right: 5%;
+    margin-left: 75%;
+    position: fixed;
+  }
+  .ac-rightsidebar{
+    width: 20%;
+    margin-top: 50px;
+    margin-right: 5%;
+    margin-left: 75%;
+    position: fixed;
+  }
+  .account-image{
+    border-radius: 50%;
+    height:130px;
+    width:130px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  .account-image-column{
+    text-align: center;
+    margin: auto;
+  
+  }
+  
+  .account-image-container{
+    text-align: center;
+    margin: auto;
+  }
+  
+  .account-image-row{
+    text-align: center;
+    margin: auto;
+    
+  }
+  
+  .account-post-row{
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .account-posts{
+    margin-top: 30px;
+    background-color:#d1b0d3;
+    border-radius: 0.8em;
+  }
+  
+  .account-posts-row{
+    margin-top: 20px;  
+    
+  
+  }
+  
+  .account-posts-row-sub{
+    margin-top: 10px;
+  }
+  
+  
+  .post-user-image{
+    border-radius: 50%;
+  }
+  
+  .post-user-name{
+    margin: auto;
+    text-align: initial;
+  }
+  .feed-image-center{
+    text-align: center;
+  }
+  
+  .comment-image{
+    text-align: center;
+    border-radius: 50%;
+  
+  }
+  
+  .comment-box-row{
+    background-color: #9b5c9f!important;
+    border-top-left-radius: 0.8em;
+    border-top-right-radius:0.8em ;
+  }
+  
+  .comment-box-comment-btn{
+    text-align: center;
+    margin-top: 10px;
+  
+  }
+  
+  .comment-blog-users-row{
+    margin-top:10px;
+    margin-bottom: 1px;
+    height: 70px;
+    background-color: #9b5c9f!important;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+  }
+  
+  .like-blog-users-row{
+    margin-top:10px;
+    margin-bottom: 1px;
+    height: 70px;
+    background-color: #9b5c9f!important;
+    border-radius: 0.5em;
+  }
+  
+  .comment-blog-user-image{
+    text-align: center;
+    margin: auto auto auto 0px;
+    width: 20%;
+  }
+  
+  .comment-blog-user-name{
+    width: 60%;
+    margin: auto auto auto 0px;
+  }
+  
+  .comment-blog-user-name-segment{
+    margin: auto;
+  }
+  
+  .comment{
+    background-color: #aa60d8f0;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+  }
+  
+  .comment-box-image{
+    text-align: center;
+    margin: auto;
+  }
+  
+  .card.card-body{
+    border: 0px;
+    --bs-card-bg:none;
+  }
+  
+  .comment-box-comment-prev{
+    background-color: #d1b0d3!important;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+  }
+  
+  .comment-box-comment{
+    margin-top: 10px;
+  }
+  
+  .comment-box-comments-link{
+    margin-top: 15px;
+    text-align: center;
+    background-color: #aa60d8f0;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+    
+  }
+  
+  .card.card-body{
+    border-radius: 0.8em;
+  }
+  
+  .feed-image-blog{
+    width: inherit;
+  }
+  
+  .feed-lcs-btn{
+    width: 100%;
+  }
+  
+  .feed-user-details .feed-user-name{
+    margin: auto;  
+  
+  }
+  
+  .feed-name-head{
+    font-size: larger;
+  }
+  
+  .feed-name-head-sub{
+    font-size: medium;
+    margin: 0px;
+  }
+  
+  .feed-user-image-p{
+    border-radius: 50%;
+    height:60px;
+    width:60px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .feed-user-image-p:hover{
+    cursor: pointer;
+  
+  }
+  
+  .account-image-center{
+    padding: 0;
+    height: 80px;
+  }
+  
+  .account-post-image-p{
+    height:60px;
+    width:60px;
+    margin-top: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  .feed-comment-user-image-p{
+    border-radius: 50%;
+    height:40px;
+    width:40px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  .all-comments-likes-block{
+    background-color: #d1b0d3!important;
+    margin: 0px;
+    border-radius: 0.8em;
+  }
+  
+  .col-10.border.feed-user-name{
+    margin: auto;
+  }
+  
+  .feed-sub-username{
+    margin: auto;
+  }
+  
+  .feed-like-comment-share{
+    text-align: center;
+    margin: auto;
+  }
+  
+  .btn-font-size{
+    margin: 0 0 0 0;
+  }
+  .account-post-button{
+    margin-top: 40px;
+  }
+  
+  .account-post-image{
+    text-align: center;
+    margin: auto;
+    width: 20%;
+    height: 80px;
+  }
+  
+  .account-post-content{
+    margin-bottom: 0px;
+    font-size:large;
+  }
+  .account-post-date{
+    margin-bottom: 0px;
+    font-size:medium;
+  }
+  .blog-users-row{
+    margin-top:10px;
+    margin-bottom: 10px;
+    height: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #bc80e1f0;
+    border-radius: 0.7em;
+  }
+  .admin-blog-users-row{
+    margin-top:10px;
+    height: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #bc80e1f0;
+    border-top-left-radius: 0.7em;
+    border-top-right-radius: 0.7em;
+  }
+  .admin-user-content{
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #bc80e1f0;
+    border-bottom-left-radius: 0.7em;
+    border-bottom-right-radius: 0.7em;
+  }
+  
+  
+  
+  .blog-user-name-sub{
+    background-color: #a05ed6f0;
+    border-radius: 0.5em;
+    padding: 5px;
+  
+  }
+  
+  .blog-user-name-sub:hover{
+    cursor: pointer;
+  }
+  
+  
+  
+  .blog-image{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+  }
+  
+  .blog-user-image{
+    text-align: center;
+    margin: auto;
+    width: 20%;
+  }
+  
+  .blog-user-name{
+    width: 60%;
+  }
+  
+  .blog-user-name{
+    margin: auto;
+  }
+  
+  .user-form{
+    display: contents;
+  }
+  
+  .blog-user-follow-button{
+    width: 20%;
+    margin: auto;
+    padding: 0px;
+    text-align: center;
+  }
+  
+  .create-account-content{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+  }
+  
+  .post-subname{
+    margin-bottom: 0px;
+    
+  }
+  
+  .create-account-container{
+    margin-top: 20px;
+    background-color: #b6d4c1;
+    border-radius: 1em;
+    
+  }
+  .nav-color{
+    background-color: #5e9582!important;
+  }
+
+  .login-account-container{
+    background-color: #b6d4c1!important;
+    border-radius: 1em;
+  }
+  
+  .submit-button{
+    text-align: center;
+  }
+  
+  .user-details-account{
+    margin-top: 20px;
+    margin-right: 5%;
+  }
+  
+  .three-dot-container{
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: auto;
+  }
+  
+  .start-a-post-btn{
+    width: 100%;
+  }
+  
+  .like-comment-row{
+    margin-top: 10px;
+  }
+  
+  .form-group{
+    margin-top: 20px;
+  }
+  
+  .message{
+    text-align: center;
+  }
+  
+  .index-container-row-1{
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #b6d4c1!important;
+    border-radius:3em;
+  }
+  
+  .index-container-row-2{
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .search-post-account{
+    padding: 15px;
+  }
+  
+  .index-font{
+    font-size: xx-large;
+    font-weight: bold;
+    margin:20px;
+  }
+  
+  .index-button{
+    background-color: #d1b0d3!important;
+  }
+  
+  .search-post{
+    display: none;
+  
+  }
+  
+  .btn-outline-success {
+    --bs-btn-color: #8e3eba;
+    --bs-btn-border-color: #8e3eba;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #8e3eba;
+    --bs-btn-hover-border-color: #8e3eba;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #8e3eba;
+    --bs-btn-active-border-color: #8e3eba;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8e3eba;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8e3eba;
+    --bs-gradient: none;
+  }
+  
+  .danger{
+    color: red;
+    text-align: center;
+  }
+  
+  .center-text{
+    text-align: center;
+  }
+  
+  .create-content{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .feed-content{
+    height: fit-content;
+    background-color: #d1b0d3!important;
+  }
+  .feed-down-tab{
+    height:60px;
+    bottom: 0px;
+    background-color: #9b5c9f!important;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+  }
+  
+  
+  .feed-name{
+    font-size: larger;
+  }
+  
+  .account-post-title{
+    font-size: larger;
+  }
+  .account-post-title-sub{
+    margin-bottom: 0px;
+    font-size: larger;
+  }
+  .col-2.border.feed-options {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  
+  @media only screen and (min-width: 900px) and (max-width: 1150px) {
+      .main-content{
+      width:75%;
+      margin-left:30%;
+      margin-right: 5%;
+      overflow: auto;
+      height: calc(100vh - 100px);
+      }
+    
+      .account-main-content{
+        width:65%;
+        margin-left:5%;
+        margin-right:30%;
+        overflow: auto;
+        height: calc(100vh - 100px);
+        }
+      .admin-account-main-content{
+        width:65%;
+        margin-left:5%;
+        margin-right:30%;
+        overflow: auto;
+        height: calc(100vh - 100px);
+        }
+      .rightsidebar{
+        width: 20%;
+        margin-right: 5%;
+        margin-left: 75%;
+      }
+      .ac-rightsidebar{
+        width: 20%;
+        margin-top: 50px;
+        margin-right: 5%;
+        margin-left: 75%;
+      }
+      .name{
+        font-size: x-large;
+      }
+  }
+  
+  @media only screen and (min-width: 1150px) and (max-width: 1340px) {
+    .main-content{
+      width:60%;
+      margin-left:30%;
+      margin-right: 5%;
+      overflow: auto;
+      height: calc(100vh - 100px);
+      }
+      .name{
+        font-size: x-large;
+      }
+    .account-main-content{
+      width:65%;
+      margin-left:5%;
+      margin-right:30%;
+      overflow: auto;
+      height: calc(100vh - 100px);
+      }
+    .admin-account-main-content{
+      width:65%;
+      margin-left:5%;
+      margin-right:30%;
+      overflow: auto;
+      height: calc(100vh - 100px);
+      }
+    .rightsidebar{
+      width: 20%;
+      margin-left: 75%;
+      margin-right: 5%;
+    }
+    .ac-rightsidebar{
+      width: 20%;
+      margin-top: 50px;
+      margin-left: 75%;
+      margin-right: 5%;
+    }
+  
+  }
+  
+  @media screen and (max-width:1190px) {
+    .account-main-content{
+      margin: auto;
+    }
+    .admin-account-main-content{
+      margin: auto;
+    }
+    .rightsidebar{
+      display: none;
+    }
+    .ac-rightsidebar{
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .sidebar{
+      display: none;
+    }
+    .main-content{
+      display: flex;
+      margin: auto;
+    }
+    .search-post{
+      display: contents;
+      margin-bottom: 20px;
+  
+    }
+    .search-post-col{
+      padding: 0px;
+    }
+    .search-post-con{
+      padding: 0px;
+      margin-bottom:10px;
+    }
+    
+    .name{
+      font-size:large;
+    }
+  
+  }
+  
+  
+  
+  @media screen and (max-width:730px){
+    .account-image-column{
+      width: 100%;
+    }
+    .account-name-column{
+      width: 100%;
+      height: 80px;
+      text-align: center;
+    }
+    .account-header {
+      margin-top: 0px;
+      height: 350px;
+      margin-bottom: 30px;
+    }
+    .create-account-content{
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-top: 50px;
+    }
+    .feed-user-image-p{
+      border-radius: 50%;
+      height:40px;
+      width:40px;
+      margin: auto;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .account-post-image-p{
+      height:70px;
+      width:70px;
+      margin-top: 4px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .feed-name{
+      font-size: medium;
+    }
+    .post-subname{
+      font-size: small;
+      margin-bottom: 0px;
+    }
+    
+    .account-post-title{
+      font-size: small;
+    }
+    .account-post-title-sub{
+      font-size: medium;
+    }
+    .account-post-content{
+      margin-bottom: 0px;
+      font-size:smaller;
+    }
+    .account-post-date{
+      margin-bottom: 0px;
+      font-size: small;
+    }
+    .blog-user-follow-button{
+      width: 20%;
+      margin: auto;
+      text-align: center;
+    }
+    .follow-btn{
+      height: 40px;
+      width: 70px;
+    }
+    .btn-font-size{
+      font-size: small;
+      margin: 0 0 0 0;
+    }
+    .feed-name-head{
+      font-size: medium;
+    }
+    .feed-name-head-sub{
+      font-size: small;
+    }
+    .blog-users-container{
+      padding: 0px;
+    }
+  
+    .update-account-content{
+      margin: 0px;
+    }
+    .admin-user-box{
+      margin: 0px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+    .admin-user-box-col{
+      padding: 0px;
+    }
+    .admin-account-main-content{
+      padding: 0px;
+    }
+    .admin-options-column-button-btn{
+      margin: auto;
+      height: 50px;
+      width: 50px;
+    }
+    .admin-op{
+      display: none;
+    }
+    
+  }
+  
+  /* Styles for three dot menu */
+  
+  .header{
+    width: 100%;
+    height: 60px;
+    right: auto;
+  }
+  
+  .showLeft {
+    background-color: #9b5c9f!important;
+    border: 1px solid #9b5c9f!important;
+    text-shadow: #9b5c9f!important;
+    color: black !important;
+    padding: 10px;
+  }
+  
+  .account-image-center-col{
+    margin: 0px;
+    height: 80px;
+  }
+  
+  .icons li {
+    background: none repeat scroll 0 0 black;
+    height: 7px;
+    width: 7px;
+    line-height: 0;
+    list-style: none outside none;
+    margin-right: 15px;
+    margin-top: 3px;
+    vertical-align: top;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .btn-left {
+    left: 0.4em;
+  }
+  .btn-right {
+    right: inherit;
+  }
+  .btn-left,
+  .btn-right {
+    top: 0.24em;
+  }
+  .dropbtn {
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height: fit-content;
+    margin-right: 50px;
+  }
+  
+  
+  
+  .dropdown-content {
+    display: none;
+    margin-left: -100px;
+    background-color: #9d6ba1!important;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 1em;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+    margin-right:inherit;
+  }
+  
+  

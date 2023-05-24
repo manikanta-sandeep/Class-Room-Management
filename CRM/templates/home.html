@@ -1,0 +1,2139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>
+      {% if option==1 %}Home{% endif %}
+      {% if option==2 %}Settings{% endif %}
+      {% if option==3 %}
+          {% if cgadded %}Class Group added{% endif %}
+          {% if annsent %}Announcement sent{% endif %}
+      {% endif %}
+      {% if option==4 %}{% if k %}Success{% else %}Error{% endif %}{% endif %}
+      {% if option==5 %}Add a Item{% endif %}
+      {% if option==6 %}
+        {% if notavail==1 %}
+          Not registered
+        {% else %}
+          {% if key==1 %}
+          {{data[2]}}
+          {% else %}
+          Update account
+          {% endif %}
+        {% endif %}
+      {% endif %}
+      {% if option==7 %}Add a class{% endif %}
+      {% if option==8 %}Account
+      {% endif %}
+      {% if option==9 %}Contact Me{% endif %}
+      {% if option==11 %}About{% endif %}
+      {% if option==12 %}Search results{% endif %}
+      {% if option==13 %}My Class Groups{% endif %}
+      {% if option==14 %}Class Group{% endif %}
+      {% if option==15 %}Make announcement{% endif %}
+    </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    
+
+<link href="/static/css/style.css" rel="stylesheet">
+<link href="/static/css/features.css" rel="stylesheet">
+<link href="/static/css/carousel.css" rel="stylesheet">
+<script src="/static/script/checkout.js"></script>
+<script>
+    /* global bootstrap: false */
+(() => {
+  'use strict'
+  const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  tooltipTriggerList.forEach(tooltipTriggerEl => {
+    new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+})()
+</script>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+  </head>
+  <body style="position: relative; min-height: 100%; top: 0px;">
+      
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="bootstrap" viewBox="0 0 118 94">
+    <title>
+      {% if option==1 %}Home{% endif %}
+      {% if option==2 %}Settings{% endif %}
+      {% if option==3 %}
+          {% if cgadded %}Class Group added{% endif %}
+          {% if annsent %}Announcement sent{% endif %}
+      {% endif %}
+      {% if option==5 %}Add a Item{% endif %}
+      {% if option==6 %}
+      {% if notavail==1 %}
+        Not registered
+      {% else %}
+        {% if key==1 %}
+        {{data[2]}}
+        {% else %}
+        Update account
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+    </title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+  </symbol>
+  <symbol id="home" viewBox="0 0 16 16">
+    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+  </symbol>
+  <symbol id="speedometer2" viewBox="0 0 16 16">
+    <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+    <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+  </symbol>
+  <symbol id="table" viewBox="0 0 16 16">
+    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+  </symbol>
+  <symbol id="people-circle" viewBox="0 0 16 16">
+    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+  </symbol>
+  <symbol id="grid" viewBox="0 0 16 16">
+    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+  </symbol>
+  <symbol id="collection" viewBox="0 0 16 16">
+    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+  </symbol>
+  <symbol id="calendar3" viewBox="0 0 16 16">
+    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+    <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+  </symbol>
+  <symbol id="chat-quote-fill" viewBox="0 0 16 16">
+    <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766a1.688 1.688 0 0 0-.227-.272 1.467 1.467 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 5.734 6C4.776 6 4 6.746 4 7.667c0 .92.776 1.666 1.734 1.666.343 0 .662-.095.931-.26-.137.389-.39.804-.81 1.22a.405.405 0 0 0 .011.59c.173.16.447.155.614-.01 1.334-1.329 1.37-2.758.941-3.706a2.461 2.461 0 0 0-.227-.4zM11 9.073c-.136.389-.39.804-.81 1.22a.405.405 0 0 0 .012.59c.172.16.446.155.613-.01 1.334-1.329 1.37-2.758.942-3.706a2.466 2.466 0 0 0-.228-.4 1.686 1.686 0 0 0-.227-.273 1.466 1.466 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 10.07 6c-.957 0-1.734.746-1.734 1.667 0 .92.777 1.666 1.734 1.666.343 0 .662-.095.931-.26z"/>
+  </symbol>
+  <symbol id="cpu-fill" viewBox="0 0 16 16">
+    <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+    <path d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5z"/>
+  </symbol>
+  <symbol id="gear-fill" viewBox="0 0 16 16">
+    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+  </symbol>
+  <symbol id="speedometer" viewBox="0 0 16 16">
+    <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+    <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
+  </symbol>
+  <symbol id="toggles2" viewBox="0 0 16 16">
+    <path d="M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2 0-.729-.195-1.412-.535-2z"/>
+    <path d="M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm.535-10a3.975 3.975 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126c.091-.355.23-.69.41-1H4a2 2 0 1 0 0 4h2.535z"/>
+    <path d="M14 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/>
+  </symbol>
+  <symbol id="tools" viewBox="0 0 16 16">
+    <path d="M1 0L0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z"/>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+  </symbol>
+  <symbol id="geo-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+  </symbol>
+</svg>
+   
+  <nav class="navbar nav-color navbar-expand-lg navbar-dark  bg-dark" aria-label="Offcanvas navbar large">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="
+      {% if option==1 %}/home{% endif %}
+      {% if option==2 %}/settings{% endif %}">
+        {% if option==1 %}Home{% endif %}
+        {% if option==2 %}Settings{% endif %}
+        {% if option==3 %}
+          {% if cgadded %}Class Group added{% endif %}
+          {% if annsent %}Announcement sent{% endif %}
+      {% endif %}
+        {% if option==4 %}{% if k %}Success{% else %}Error{% endif %}{% endif %}
+        {% if option==5 %}Add a Item{% endif %}
+        {% if option==6 %}
+          {% if notavail==1 %}
+            Not registered
+          {% else %}
+            {% if key==1 %}
+            {{data[2]}}
+            {% else %}
+            Update account
+            {% endif %}
+          {% endif %}
+        {% endif %}
+        {% if option==7 %}Add a class{% endif %}
+        {% if option==8 %}Account
+      {% endif %}
+      {% if option==9 %}Contact Me{% endif %}
+      {% if option==11 %}About{% endif %}
+      {% if option==12 %}Search results{% endif %}
+      {% if option==13 %}My Class Groups{% endif %}
+      {% if option==14 %}Class Group{% endif %}
+      {% if option==15 %}Make announcement{% endif %}
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Navigation</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/my_dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/account">Account</a>
+            </li>
+  
+         
+            <li class="nav-item dropdown ">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Options
+              </a>
+              <ul class="dropdown-menu">
+                {% if su %}
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="/add_classroom">Create Session</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                {% endif %}
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="/dashboard/all_rooms">Today Room Schedule</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="/dashboard/all_classrooms">All Classrooms</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="/dashboard/all_conflicts">Conflicts</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="/dashboard/availability/search">Search for Availability</a>
+                </li>
+                
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{un}}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                <li><a class="dropdown-item" href="/about">About</a></li>
+                  <li><a class="dropdown-item" href="/contact">Contact</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3 mt-lg-0" role="search" action="/search_a_user" method="POST">
+            <input class="form-control me-2" type="search" placeholder="Search a user" aria-label="Search" name="pattern">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid">
+    <main>
+      {% if option==1 %}
+      
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img src="/static/images/gitam1.jpg" width="100%" height="100%">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img src="/static/images/gitam2.webp" width="100%" height="100%">
+                    </div>
+                  <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="/static/images/gitam3.jpg" width="100%" height="100%">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom">Welcome to the Class Room Management System.....</h2>
+        
+            <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+              <div class="col d-flex  flex-column align-items-start gap-2">
+                <h3 class="fw-bold">An online Portal for the Lectureres</h3>
+                <p class="text-muted">Here, you can trace out the class room availability.</p>
+                <a href="/my_dashboard" class="btn btn-primary btn-lg">Go to the Dashboard</a>
+              </div>
+        
+              <div class="col">
+                <div class="row row-cols-1 row-cols-sm-2 g-4">
+                  <div class="col rad2 d-flex flex-column gap-2">
+                    <a href="/account" class="list-group-item list-group-item-action py-3">
+
+                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">My account</h4>
+                    <p class="text-muted">You can view or update your profile here.</p>
+                  </a>
+                  </div>
+        
+                  <div class="col rad2 d-flex flex-column gap-2">
+                    <a href="/settings" class="list-group-item list-group-item-action py-3">
+                      <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                          </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">Settings</h4>
+                    <p class="text-muted">You can view or update your profile.</p>
+                    </a>
+                  </div>
+        
+                  <div class="col rad2 d-flex flex-column gap-2">
+                    <a href="/add_classroom" class="list-group-item list-group-item-action py-3">
+                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building-fill-dash" viewBox="0 0 16 16">
+                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Z"/>
+                        <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.493 4.493 0 0 0 12.5 8a4.493 4.493 0 0 0-3.59 1.787A.498.498 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.476 4.476 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1V1Zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5Zm3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                      </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">Create a Class</h4>
+                    <p class="text-muted">You can create a class by booking that class., </p>
+                  </a>
+                  </div>
+        
+                  <div class="col rad2 d-flex flex-column gap-2">
+                    <a href="/dashboard/availability/search" class="list-group-item list-group-item-action py-3">
+                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">Search for availability</h4>
+                    <p class="text-muted">Here you can search for the availability of the class.</p>
+                  </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+              
+          
+      {% endif %}
+      {% if option==2 %}
+      
+
+        <div class="container px-4 py-5" id="featured-3">
+          <h2 class="pb-2 border-bottom">Settings</h2>
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg>              </div>
+              <h3 class="fs-2">Update your profile</h3>
+              <p>You can update your profile details like profile picture, date of birth etc.,</p>
+              <a href="/update_account" class="icon-link d-inline-flex align-items-center">
+                Update profile
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-building-add" viewBox="0 0 16 16">
+                  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Z"/>
+                  <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1V1Z"/>
+                  <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                </svg>              </div>
+              <h3 class="fs-2">Add a role</h3>
+              <p>You can add a new role from here.</p>
+              <a href="/settings/add_a_role" class="icon-link d-inline-flex align-items-center">
+                Add role
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-building-add" viewBox="0 0 16 16">
+                  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Z"/>
+                  <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1V1Z"/>
+                  <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                </svg>              </div>
+              <h3 class="fs-2">Add an item type</h3>
+              <p>You can add a new item type from here.</p>
+              <a href="/settings/add_a_item_type" class="icon-link d-inline-flex align-items-center">
+                Add role
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-building-add" viewBox="0 0 16 16">
+                  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Z"/>
+                  <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1V1Z"/>
+                  <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                </svg>
+              </div>
+              <h3 class="fs-2">Add an item</h3>
+              <p>You can add a new item of your choice.</p>
+              <a href="/add_an_item" class="icon-link d-inline-flex align-items-center">
+                Add item
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+
+            
+          </div>
+        </div>
+      {% endif %}
+      {% if option==3 %}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="container-fluid">
+            <div class="container-fluid">
+              <div class="container-fluid details-of-user">
+                <div class="py-5 text-center">
+                  {% if cgadded %}
+                  <h2>Class Group Scuccessfully added</h2>
+                  <p class="lead">The Class Group <b>{{det}}</b> has been added successfully.</p>
+                  <p>
+                    <a href="/dashboard/add_class_group" class="btn btn-primary my-2">Add another Class Group</a>
+                    <a href="/dashboard/my_groups" class="btn btn-secondary my-2">Go to all class Groups </a>
+                  </p>
+                  {% endif %}
+
+                  {% if annsent %}
+                  <h2>Delivered</h2>
+                  <p class="lead">Announcement has been delivered to the students successfully.</p>
+                  <p>
+                    <a href="/view_class_group/{{cgid}}" class="btn btn-primary my-2">Check the announcement.</a>
+                    <a href="/dashboard/my_groups" class="btn btn-secondary my-2">Go to all class Groups </a>
+                  </p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+      </div>
+      {% endif %}
+
+      {% if option==4 %}
+      <div class="container-fluid qnavigation2 px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Quick Navigation</h2>
+    
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-4">
+          {% if sid==1 %}
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-folder-minus" viewBox="0 0 16 16">
+              <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+              <path d="M11 11.5a.5.5 0 0 1 .5-.5h4a.5.5 0 1 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+            </svg>        
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Create a session</h3>
+              <a href="/add_classroom" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          
+          {% endif %}
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-folder-minus" viewBox="0 0 16 16">
+              <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+              <path d="M11 11.5a.5.5 0 0 1 .5-.5h4a.5.5 0 1 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+            </svg>        
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">All classrooms</h3>
+              <a href="/dashboard/all_classrooms" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
+              <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+              <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Conflicts</h3>
+              <a href="/dashboard/all_conflicts" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+              <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            </svg>        <div>
+              <h3 class="fw-bold mb-0 fs-4">Availability</h3>
+              <a href="/dashboard/transport_a_product" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      
+        <div class="container-fluid">
+          <div class="row">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col  create-account-content">
+                        <div class="container-fluid  create-account-container-msg">
+                            <div class="row ">
+                                <div class="col create-content">
+                                  {% if key==1 %}
+                                  {% if s==1 %}
+                                  <h3 class="fw-bold mb-0 fs-4">The class/session that you have {% if c==1 %}created{% else %}edited{% endif %} may conflicting with some other class. Please find out the issue in conflicts tab.</h3>
+                                  {% endif %}
+                                  {% if s==-1 %}
+                                  <h3 class="fw-bold mb-0 fs-4">The class/session that you have {% if c==1 %}created{% else %}edited{% endif %} has reduced other classes. Please resolve other conflicts as well in conflicts tab.</h3>
+                                  {% endif %}
+                                  {% if s==0 %}
+
+                                  <h3 class="fw-bold mb-0 fs-4">Your class has been {% if c==1 %}created{% else %}edited{% endif %} without any conflicts. You can add some more classes.</h3>
+                                  {% endif %}
+                                  {% if msg %}
+                                  <h3 class="fw-bold mb-0 fs-4"><h6>Your feedback was sent to the admin.</h6></h3>
+                                  {% endif %}
+                                  {% endif %}
+                                  {% if msg %}
+                                  <br><br>
+                                  <a href="/contact">Send another feedback</a>
+                                  <br><br>
+                                    <a href="/home">Go to home</a>
+                                  <br><br>
+                                  {% else %}
+                                  
+                                    <br><br>
+                                    <a href="/dashboard/all_conflicts">Go to Conflicts</a>
+                                    <br><br>
+                                    {% if key==0 %}<a href="/add_classroom">Add another class</a>{% endif %}
+                                    {% if key==1 %}<a href="/my_dashboard">Go to dashboard</a>{% endif %}
+                                  {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    
+        </div>
+        </div>
+      {% endif %}
+
+      {% if option==5 %}
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            {% if key %}
+            <h1 class="fw-light">
+              Edit Class Group
+            </h1>
+            <p class="lead text-muted">Here you can Edit your Class Groups.</p>
+            {% else %}
+              <h1 class="fw-light">
+                Add a Class Group
+              </h1>
+              <p class="lead text-muted">Here you can add a Class Groups.</p>
+            {% endif %}
+            <p>
+              <a href="/home" class="btn btn-primary my-2">Home</a>
+              <a href="/my_dashboard" class="btn btn-secondary my-2">Go to Dashboard</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col  create-account-content">
+                      <div class="container-fluid  create-account-container">
+                          <div class="row ">
+                              <div class="col create-content">
+                                  <form method="POST" id="role-form" action="{% if key %}/dashboard/update_class_group/{{data[3]}}{% else %}/dashboard/class_group_added{% endif %}" class="col-mid-4 " >
+                                      <div class="form-group">
+                                          <label for="exampleDropdownFormEmail2">Enter Class Group Name</label><br>
+                                          {% if key %}
+                                          <input type="text" class="form-control" placeholder="{{data[0]}}" name="cg_name">
+                                          {% else %}
+                                          <input type="text" class="form-control" placeholder="Class Group Name" name="cg_name" required>
+                                          {% endif %}
+                                      </div>
+                                      <br>
+
+                           
+                                      <div class="form-group">
+                                        <label for="exampleDropdownFormEmail2">Email ID's</label>
+                                        {% if key %}
+                                        <textarea class="form-control" aria-label="With textarea" placeholder="{{data[1]}}" name="emi"></textarea>
+                                        {% else %}
+                                        <textarea class="form-control" aria-label="With textarea" placeholder="Enter the Email ID's without space" name="emi"></textarea>
+                                        {% endif %}
+                                      </div>
+                                      <br>
+
+                                      <div class="form-group">
+                                        
+                                        <label for="exampleDropdownFormEmail2">Class Group Description</label>
+                                        {% if key %}
+                                        <textarea class="form-control" aria-label="With textarea" placeholder="{{data[2]}}" name="cgdescription"></textarea>
+
+                                        {% else %}
+                                        <textarea class="form-control" aria-label="With textarea" placeholder="Description of the class Group" name="cgdescription"></textarea>
+                                        {% endif %}
+                                      </div>
+                                      <br>
+                                    
+
+                                      <br>
+                                      <div class="submit-button">
+                                        {% if key %}
+                                        <input class="sb btn btn-primary my-2" type="submit"  value='Save'>
+                                        {% else %}
+                                          <input class="sb btn btn-primary my-2" type="submit"  value='Add Class Group'>
+                                        {% endif %}
+                                        </div>
+                                      
+                                  </form>                        
+                                  
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+  
+      </div>
+      </div>
+
+      {% endif %}
+
+      {% if option==6 %}
+        {% if notavail==1 %}
+        <div class="container-fluid">
+          <div class="container-fluid details-of-user">
+            <div class="py-5 text-center">
+             
+              <h2>User not registered</h2>
+              <p class="lead">The user {{det[1]}} is not registered with this platform yet, please contact <a href="mailto:{{det[0]}}">{{det[0]}}</a>. </p>
+              
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="container-fluid">
+          <div class="container-fluid details-of-user">
+      
+            <div class="py-5 text-center">
+              {% if key==1 %}
+              <h2>Details of the user</h2>
+              <p class="lead">Below are the details of {{data[2]}}</p>
+              {% else %}
+              <h2>Update your details</h2>
+              <p class="lead">Below is the form to update your details</p>
+              {% endif %}
+              {% if data[4]==-1 %}
+                  {% if data[5]==0 %}
+                  <img class="account-image" src="/static/images/MAccount.jpg">
+                  {% else %}
+                  <img class="account-image" src="/static/images/FAccount.jpg">
+                  {% endif %}
+              {% else %}
+              <img class="account-image" src="data:;base64,{{ data[4] }}" >
+              {% endif %}
+            </div>
+        
+            <div class="row g-5 detail-row">
+              
+              <div class="col col-mid-8">
+                <h4 class="mb-3">Personal Details</h4>
+                {% if key!=1 %}
+                <form class="" method="POST" action="/update_account/update" enctype="multipart/form-data">
+                
+                {% endif %}
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label for="email" class="form-label">Email</label>
+                      
+                      <input type="text" class="form-control" id="exampleDropdownFormEmail2" value="{{ data[1] }}" name="email" disabled>
+                      <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                      </div>
+                    </div>
+                    
+
+                    <div class="col-12">
+                      <label  class="form-label">Name</label>
+                      <div class="input-group has-validation">
+                        {% if key==1 %}
+                        <input type="text" class="form-control" value="{{data[2]}}"  name="name" disabled>
+                        {% else %}
+                        <input type="text" class="form-control" placeholder="{{data[2]}}"  name="name">
+                        {% endif %}
+                        
+                      <div class="invalid-feedback">
+                          Your username is required.
+                        </div>
+                      </div>
+                    </div>
+                    {% if key!=1 %}
+                    <div class="col-12">
+                      <label  class="form-label">Date of Birth</label>
+                      <div class="input-group has-validation">
+                        <input type="date" class="form-control" id="exampleDropdownFormEmail2" name="dob" >
+                        <div class="invalid-feedback">
+                          Your Date of Birth is required.
+                        </div>
+                      </div>
+                    </div>
+                    {% endif %}
+                    
+
+                    <div class="col-12">
+                      <label  class="form-label">GITAM ID</label>
+                      <div class="input-group has-validation">
+                        <input type="text" class="form-control" id="a_number" name="a_number" placeholder="{{data[8]}}" value="{{data[8]}}" disabled>
+                      <div class="invalid-feedback">
+                          Your Aadhar Number is required.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label  class="form-label">Mobile Number</label>
+                      <div class="input-group has-validation">
+                        {% if key==1 %}
+                        <input type="text" class="form-control" id="m_number" name="m_number" value="{{data[9]}}" disabled>
+                        {% else %}
+                        <input type="text" class="form-control" id="m_number" name="m_number" placeholder="{{data[9]}}" value="">
+                        {% endif %}
+                        
+                      <div class="invalid-feedback">
+                          Your Mobile Number is required.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label  class="form-label">Gender</label>
+                        {% if key==1 %}
+                        <div class="form-check">
+                          <div class="form-check">
+                              {% if data[5]==0 %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" checked disabled>
+                              {% else %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" disabled>
+                              {% endif %}
+                              
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                  Male
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              {% if data[5]==1 %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" checked disabled>
+                              {% else %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" disabled>
+                              {% endif %}
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                  Female
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              {% if data[5]==2 %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" checked disabled>
+                              {% else %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" disabled>
+                              {% endif %}
+                              <label class="form-check-label" for="flexRadioDefault3">
+                                  Others
+                              </label>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="form-check">
+                          <div class="form-check">
+                              {% if data[5]==0 %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" checked>
+                              {% else %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0">
+                              {% endif %}
+                              
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                  Male
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              {% if data[5]==1 %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" checked>
+                              {% else %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1">
+                              {% endif %}
+                              <label class="form-check-label" for="flexRadioDefault2">
+                                  Female
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              {% if data[5]==2 %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" checked>
+                              {% else %}
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2">
+                              {% endif %}
+                              <label class="form-check-label" for="flexRadioDefault3">
+                                  Others
+                              </label>
+                          </div>
+                        </div>
+                        {% endif %}
+                      
+                    </div>
+                    {% if key!=1 %}
+                    <div class="col-12">
+                      <label  class="form-label">Profile Picture</label>
+                      <div class="input-group has-validation">
+                        <input class="form-control" type="file" id="formFile" name="profile_picture" value="">
+                        <div class="invalid-feedback">
+                          Your profile picture is required.
+                        </div>
+                      </div>
+                    </div>
+                    {% endif %}
+                    
+
+                    <div class="col-12">
+                      <label  class="form-label">Profile Description</label>
+                      <div class="input-group has-validation">
+                        {% if key==1 %}
+                        <textarea class="form-control" aria-label="With textarea" placeholder="{{data[10]}}" name="p_description" disabled></textarea>
+                        {% else %}
+                        <textarea class="form-control" aria-label="With textarea" placeholder="{{data[10]}}" name="p_description"></textarea>
+                        {% endif %}
+                        <div class="invalid-feedback">
+                          Your Mobile Number is required.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-5">
+                      <label for="country" class="form-label">Role</label>
+                      <select class="form-select" id="role" name="role" disabled>
+                        <option value="2">Role</option>
+                      </select>
+                      
+                    </div>
+                    {% if key==1 %}
+                    <hr class="my-4">      
+                    <h4 class="mb-3">{% if key==1 %}Current availability{% else %}Present Classes{% endif %}</h4>
+                    
+                    <div class="album py-5 bg-light">
+                      <div class="container make-fluid-cont">
+                  
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                          
+                          {% for p in range(ca|length) %}
+                          {% set j=ca[p] %}
+                          {% set c=p %}
+                          {% if j|length!=0 %}
+
+                          {% set i=j[0] %}
+
+                          
+                          <div class="col ">
+                            
+                            <div class="card shadow-sm ">
+                              <div class="card-body color-blue">
+                              
+                                {% if c==0 %}
+                                <p class="card-text"><b>Previous Class</b>(1hr before)</p> 
+                                {% endif %}
+                                {% if c==1 %}
+                                <p class="card-text"><b>Ongoing class</b></p>
+                                {% endif %}
+                                {% if c==2 %}
+                                <p class="card-text"><b>Upcoming Class</b>(1hr after)</p>
+                                {% endif %}
+                                
+                              
+                              </div>
+                            </div>
+                            <div class="card shadow-sm ">
+                              
+                              <div class="card-body {% if i[9]==1 %} color-red {% else %} {% if i[8]==0 %} color-green {% else %} color-yellow {% endif %} {% endif %} ">
+                                <ul class="list-unstyled mt-3 mb-4">
+                                  {% set a=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                                  {% set b=[ 'It is a Permanent Class','It is a Temporary Class'] %}
+                                  {% if i[3]==userid %}
+                                  <li><b>Faculty of the Class</b></li>
+                                  {% else %}
+                                  <li><b>Incharge of the class</b></li>
+                                  {% endif %}
+                                  <li><b>Class ID: </b> {{i[0]}}</li>
+                                  <li><b>Room ID: </b> {{i[1]}}</li>
+                                  <li><b>Room Number: </b> {{i[2]}}</li>
+
+                                  
+                                  <li><b>Faculty ID : </b><a href="/user/gid/{{i[3]}}">{{i[3]}}</a></li>
+                                  <li><b>Incharge ID: </b><a href="/user/gid/{{i[4]}}">{{i[4]}}</a></li>
+                                
+                                  <li><b>Duration : </b> {{i[5]}}</li>
+                                  <li><b>Start time: </b> {{i[6]}}</li>
+                                  <li><b>End time: </b>{{i[7]}}</li>
+                                  <li><b>Status: </b>{{b[i[8]]}}</li>
+                                  <li><b>Description: </b> {{i[10]}}</li>
+                                </ul> 
+                              </div>
+                            </div>
+                          </div>
+                          {% else %}
+                          <div class="col ">
+                            <div class="card shadow-sm ">
+                              <div class="card-body color-blue">
+                              
+                                {% if c==0 %}
+                                <p class="card-text"><b>Previous Class</b>(1hr before)</p> 
+                                {% endif %}
+                                {% if c==1 %}
+                                <p class="card-text"><b>Ongoing class</b></p>
+                                {% endif %}
+                                {% if c==2 %}
+                                <p class="card-text"><b>Upcoming Class</b>(1hr after)</p>
+                                {% endif %}
+                                
+                              </div>
+                            </div>
+                            <div class="card shadow-sm ">
+                              <div class="card-body color-green">
+                              <p class="card-text"><b>Free Time</b></p>
+                              </div>
+                            </div>
+                          </div>
+                          {% endif %}
+                          {% endfor %}
+                  
+                        
+                        </div>
+                      </div>
+                    </div>
+                    {% endif %}
+                    
+                    
+                    {% if key!=1 %}<button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>{% endif %}
+        
+                    
+                  </div>
+        
+                  {% if key!=1 %}</form>{% endif %}
+                
+              </div>
+            </div>
+        
+        
+        
+          </div>
+        </div>
+        {% endif %}
+
+      {% endif %}
+
+
+      {% if option==7 %}
+      <div class="container-fluid">
+        <div class="container-fluid details-of-user">
+    
+          <div class="py-5 text-center">
+            <h2>Add a class</h2>
+            <p class="lead">Enter the details of the session. Your User ID will be recorded</p>
+          
+            </div>
+      
+          <div class="row g-5 detail-row">
+            
+            <div class="col col-mid-8">
+              <h4 class="mb-3">Class Details</h4>
+              <form class="" method="POST" action="/add_classroom/add" enctype="multipart/form-data">
+                <div class="row g-3">
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Select a Room</label>
+                    <select class="form-select" id="roomid" name="roomid" required>
+                      <option value="">Choose...</option>
+                      {% for i in rooms %}
+                      <option value="{{i[0]}}">{{i[1]}}</option>
+                      {% endfor %}
+                    </select>
+                    
+                  
+                  </div>
+                  <div class="col-12">
+                    <a href="/add_an_item">Not there what you are looking for? Add room</a>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Session Faculty ID</label>
+                    <select class="form-select" id="fid" name="fid" required>
+                      <option value="">Choose...</option>
+                      {% for i in fid %}
+                      <option value="{{i[0]}}">{{i[0]}}</option>
+                      {% endfor %}
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Session Incharge ID</label>
+                    <select class="form-select" id="iid" name="iid">
+                      <option value="">Choose...</option>
+                      {% for i in fid %}
+                      <option value="{{i[0]}}">{{i[0]}}</option>
+                      {% endfor %}
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Weekday</label>
+                    <select class="form-select" id="wkd" name="wkd" required>
+                      <option value="">Choose...</option>
+                      {% for i in [('Monday', 0), ('Tuesday', 1), ('Wednesday', 2), ('Thursday', 3), ('Friday', 4), ('Saturday', 5), ('Sunday', 6)] %}
+                      <option value="{{i[1]}}">{{i[0]}}</option>
+                      {% endfor %}
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+                  
+
+                  
+                 
+                  <div class="col-md-5">
+                    <label  class="form-label">Session start time</label>
+                    <div class="input-group has-validation">
+                      <input type="time" class="form-control" id="exampleDropdownFormEmail2" name="s_time" required>
+                      
+                    </div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label  class="form-label">Session end time</label>
+                    <div class="input-group has-validation">
+                      <input type="time" class="form-control" id="exampleDropdownFormEmail2" name="e_time" required>
+                      
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label  class="form-label">Temporary</label>
+                    <div class="form-check">
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="temporary" id="flexRadioDefault12" value="1">             
+                          <label class="form-check-label" for="flexRadioDefault1">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="temporary" id="flexRadioDefault22" value="0" checked>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                              No
+                          </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Class Group</label>
+                    <select class="form-select" id="cgid" name="cgid">
+                      <option value="">Choose...</option>
+                      {% for i in acgs %}
+                      <option value="{{i[0]}}">{{i[1]}}</option>
+                      {% endfor %}
+                    </select>
+                    
+                  </div>
+      
+                  <div class="col-12">
+                    <label  class="form-label">Notify Group Members</label>
+                    <p class="very-small">!This is applicable only when you select class group.</p>
+                    <div class="form-check">
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="notify" id="flexRadioDefault123" value="1" >             
+                          <label class="form-check-label" for="flexRadioDefault1">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="notify" id="flexRadioDefault223" value="0" checked>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                              No
+                          </label>
+                      </div>
+                    </div>
+                  </div>
+      
+                  
+                  <div class="col-12">
+                    <label  class="form-label">Description</label>
+                    <div class="input-group has-validation">
+                      <textarea class="form-control" aria-label="With textarea" placeholder="Reason" name="description" required></textarea>
+                      
+                    </div>
+                  </div>
+      
+      
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">Create class</button>
+                </div>
+      
+                
+              </form>
+            </div>
+          </div>
+      
+      
+      
+      </div>
+      </div>
+      {% endif %}
+
+      {% if option==8 %}
+      <div class="container-fluid">
+        <div class="container-fluid details-of-user">
+    
+          <div class="py-5 text-center">
+            <h2>Your Account</h2>
+            <p class="lead">You cans see your details here.</p>
+          
+            {% if data[4]==-1 %}
+                {% if data[5]==0 %}
+                <img class="account-image" src="/static/images/MAccount.jpg">
+
+                {% else %}
+                <img class="account-image" src="/static/images/FAccount.jpg">
+
+                {% endif %}
+            {% else %}
+            <img class="account-image" src="data:;base64,{{ data[4] }}" >
+            {% endif %}
+            </div>
+      
+          <div class="row g-5 detail-row">
+            
+            <div class="col col-mid-8">
+              <h4 class="mb-3">Personal Details</h4>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="{{ data[1] }}" name="email" disabled>
+          
+                  </div>
+                  
+
+                  <div class="col-12">
+                    <label  class="form-label">Name</label>
+                    <div class="input-group has-validation">
+                      <input type="text" class="form-control" placeholder="{{data[2]}}"  name="name" disabled>
+                    <div class="invalid-feedback">
+                        Your username is required.
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="col-12">
+                    <label  class="form-label">Date of Birth</label>
+                    <div class="input-group has-validation">
+                      <input type="date" class="form-control" id="exampleDropdownFormEmail2" name="dob" placeholder="{{data[3]}}" disabled>
+                      <div class="invalid-feedback">
+                        Your Date of Birth is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label  class="form-label">GITAM ID</label>
+                    <div class="input-group has-validation">
+                      <input type="text" class="form-control" id="a_number" name="a_number" placeholder="{{data[8]}}" disabled>
+                    <div class="invalid-feedback">
+                        Your Aadhar Number is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label  class="form-label">Mobile Number</label>
+                    <div class="input-group has-validation">
+                      <input type="text" class="form-control" id="m_number" name="m_number" placeholder="{{data[9]}}" disabled>
+                    <div class="invalid-feedback">
+                        Your Mobile Number is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label  class="form-label">Gender</label>
+                    <div class="form-check">
+                      <div class="form-check">
+                          {% if data[5]==0 %}
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" checked disabled>
+                          {% else %}
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" disabled>
+                          {% endif %}
+                          
+                          <label class="form-check-label" for="flexRadioDefault1">
+                              Male
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          {% if data[5]==1 %}
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" checked disabled>
+                          {% else %}
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" disabled>
+                          {% endif %}
+                          <label class="form-check-label" for="flexRadioDefault2">
+                              Female
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          {% if data[5]==2 %}
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" checked disabled>
+                          {% else %}
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" disabled>
+                          {% endif %}
+                          <label class="form-check-label" for="flexRadioDefault3">
+                              Others
+                          </label>
+                      </div>
+                  </div>
+                  </div>
+
+         
+
+                  <div class="col-12">
+                    <label  class="form-label">Profile Description</label>
+                    <div class="input-group has-validation">
+                      <textarea class="form-control" aria-label="With textarea" placeholder="{{data[10]}}" name="p_description" disabled></textarea>
+                      <div class="invalid-feedback">
+                        Your Mobile Number is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Role</label>
+                    <select class="form-select" id="role" name="role" disabled>
+                      <option value="1">Choose...</option>
+                      
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+                  
+
+      
+
+                  
+                  <hr class="my-4">
+      
+                  <form method="POST" action="/update_account"><button class="w-100 btn btn-primary btn-lg" type="submit">Edit</button></form>
+                  <hr class="my-4">  
+                  <h4 class="mb-3">{% if key==1 %}Current availability{% else %}Present Classes{% endif %}</h4>
+                  
+                  <div class="album py-5 bg-light">
+                    <div class="container make-fluid-cont">
+                
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        
+                        {% for p in range(ca|length) %}
+                          {% set j=ca[p] %}
+                      
+                          {% if j|length!=0 %}
+
+                            {% set i=j[0] %}
+                      
+                            
+                            <div class="col ">
+                              
+                              <div class="card shadow-sm ">
+                                <div class="card-body color-blue">
+                                
+                                  {% if p==0 %}
+                                  <p class="card-text"><b>Previous Class</b>(1hr before)</p> 
+                                  
+                                  {% endif %}
+                                  {% if p==1 %}
+                                  <p class="card-text"><b>Ongoing class</b></p>
+                                  {% endif %}
+                                  {% if p==2 %}
+                                  <p class="card-text"><b>Upcoming Class</b>(1hr after)</p>
+                                  {% endif %}
+                                  
+                                
+                                </div>
+                              </div>
+         
+                              <div class="card shadow-sm ">
+                                
+                                <div class="card-body {% if i[9]==1 %} color-red {% else %} {% if i[8]==0 %} color-green {% else %} color-yellow {% endif %} {% endif %} ">
+                                  <ul class="list-unstyled mt-3 mb-4">
+                                    {% set a=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                                    {% set b=[ 'It is a Permanent Class','It is a Temporary Class'] %}
+                                    {% if i[3]==userid %}
+                                    <li><b>Faculty of the Class</b></li>
+                                    {% else %}
+                                    <li><b>Incharge of the class</b></li>
+                                    {% endif %}
+                                    <li><b>Class ID: </b> {{i[0]}}</li>
+                                    <li><b>Room ID: </b> {{i[1]}}</li>
+                                    <li><b>Room Number: </b> {{i[2]}}</li>
+
+                                    <li><b>Faculty ID : </b><a href="/user/gid/{{i[3]}}">{{i[3]}}</a></li>
+                                    <li><b>Incharge ID: </b><a href="/user/gid/{{i[4]}}">{{i[4]}}</a></li>
+                                    
+                                    <li><b>Duration : </b> {{i[5]}}</li>
+                                    <li><b>Start time: </b> {{i[6]}}</li>
+                                    <li><b>End time: </b>{{i[7]}}</li>
+                                    <li><b>Status: </b>{{b[i[8]]}}</li>
+                                    <li><b>Description: </b> {{i[10]}}</li>
+                                  </ul> 
+                                </div>
+                              </div>
+                            </div>
+                          {% else %}
+                          <div class="col ">
+                            <div class="card shadow-sm ">
+                              <div class="card-body color-blue">
+                              
+                                {% if p==0 %}
+                                <p class="card-text"><b>Previous Class</b>(1hr before)</p> 
+                                {% endif %}
+                                {% if p==1 %}
+                                <p class="card-text"><b>Ongoing class</b></p>
+                                {% endif %}
+                                {% if p==2 %}
+                                <p class="card-text"><b>Upcoming Class</b>(1hr after)</p>
+                                {% endif %}
+                                
+                              
+                              </div>
+                            </div>
+                            <div class="card shadow-sm ">
+                              <div class="card-body color-green">
+                              <p class="card-text"><b>Free Time</b></p>
+                              </div>
+                            </div>
+                          </div>
+                          {% endif %}
+
+                        {% endfor %}
+                
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>      
+            </div>
+          </div>
+      
+      
+      
+      </div>
+      </div>
+      {% endif %}
+
+
+      {% if option==9 %}
+        <div class="container">
+          <div class="py-5 text-center">
+            <h2>Contact Me</h2>
+            <p class="lead">Please write the query/feedback, the email will be sent to the admin.</p>
+          
+          </div>
+          <div class="row color-skb rad2">
+              <form action="/contact/send" method="POST">
+                  <br>
+                  
+                  <div class="form-group">
+                      <label for="exampleDropdownFormEmail2">Email address</label>
+                      <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="{{ mail }}" name="email" value="{{ mail }}" disabled>
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleDropdownFormEmail2">Name</label>
+                      <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="{{Name}}" value="{{Name}}" name="name" disabled>
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleDropdownFormEmail2">Subject</label>
+                      <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Subject" name="subject" required>
+                  </div>
+                  <br>
+                  <div class="input-group">
+                      <span class="input-group-text">Message</span>
+                      <textarea class="form-control" aria-label="With textarea" name="message"></textarea>
+                  </div>
+                  <br><br>
+                  <input class="align6 btn btn-outline-secondary" type="submit" value="Submit">
+                  <div><br></div>
+              </form>
+          </div>
+      </div>
+      {% endif %}
+
+      {% if option==10 %}
+      <div class="container-fluid">
+        <div class="container-fluid details-of-user">
+    
+          <div class="py-5 text-center">
+            <h2>Edit a class</h2>
+            <p class="lead">Edit the details of the session.</p>
+          
+          </div>
+      
+          <div class="row g-5 detail-row">
+            
+            <div class="col col-mid-8">
+              <h4 class="mb-3">Class Details</h4>
+              <form class="" method="POST" action="/edited/{{cid}}" enctype="multipart/form-data">
+                <div class="row g-3">
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Select a Room</label>
+                    <select class="form-select" id="roomid" name="roomid" >
+                      <option value="{{d[0]}}">{{d[1]}}</option>
+                      {% for i in rooms %}
+                      <option value="{{i[0]}}">{{i[1]}}</option>
+                      {% endfor %}
+                    </select>
+                    
+                  
+                  </div>
+                  <div class="col-12">
+                    <a href="/add_an_item">Not there what you are looking for? Add room</a>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Session Faculty ID</label>
+                    <select class="form-select" id="fid" name="fid" >
+                      <option value="{{d[2]}}">{{d[2]}}</option>
+                      {% for i in fid %}
+                      <option value="{{i[0]}}">{{i[0]}}</option>
+                      {% endfor %}
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Session Incharge ID</label>
+                    <select class="form-select" id="iid" name="iid">
+                      <option value="{{d[3]}}">{{d[3]}}</option>
+                      {% for i in fid %}
+                      <option value="{{i[0]}}">{{i[0]}}</option>
+                      {% endfor %}
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Weekday</label>
+                    {% set a=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                    <select class="form-select" id="wkd" name="wkd" >
+                      <option value="{{d[4]}}">{{a[d[4]]}}</option>
+                      {% for i in [('Monday', 0), ('Tuesday', 1), ('Wednesday', 2), ('Thursday', 3), ('Friday', 4), ('Saturday', 5), ('Sunday', 6)] %}
+                      <option value="{{i[1]}}">{{i[0]}}</option>
+                      {% endfor %}
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+                  
+
+                  
+                 
+                  <div class="col-md-5">
+                    <label  class="form-label">Session start time</label>
+                    <div class="input-group has-validation">
+                      <input type="time" class="form-control" id="exampleDropdownFormEmail2" value="{{d[5]}}" name="s_time" >
+                      
+                    </div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label  class="form-label">Session end time</label>
+                    <div class="input-group has-validation">
+                      <input type="time" class="form-control" id="exampleDropdownFormEmail2" value="{{d[6]}}"  name="e_time" >
+                      
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label  class="form-label">Temporary</label>
+                    <div class="form-check">
+                      <div class="form-check">
+                        {% if d[7] %}
+                          <input class="form-check-input" type="radio" name="temporary" id="flexRadioDefault12" value="1" checked>    
+                        {% else %}
+                          <input class="form-check-input" type="radio" name="temporary" id="flexRadioDefault12" value="1" > 
+                        {% endif %}         
+                          <label class="form-check-label" for="flexRadioDefault1">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="form-check">
+                        {% if d[7] %}
+                          <input class="form-check-input" type="radio" name="temporary" id="flexRadioDefault22" value="0">
+                        {% else %}
+                          <input class="form-check-input" type="radio" name="temporary" id="flexRadioDefault22" value="0" checked>
+                        {% endif %}
+                          <label class="form-check-label" for="flexRadioDefault2">
+                              No
+                          </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-12">
+                    <label  class="form-label">Description</label>
+                    <div class="input-group has-validation">
+                      <textarea class="form-control" aria-label="With textarea" placeholder="{{d[8]}}" name="description" ></textarea>
+                      
+                    </div>
+                  </div>
+      
+      
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">Edit class</button>
+                </div>
+      
+                
+              </form>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      {% endif %}
+      {% if option==11 %}
+      <div class="container-fluid">
+        <div class="container-fluid details-of-user">
+    
+          <div class="py-5 text-center">
+            <h2>About Class Room Management System Application</h2>
+            <p class="lead">Application designed, implemented and developed by Manikanta Puppala.</p>
+          
+          </div>
+
+          
+      
+            <div class="row align-items-md-stretch">
+              
+              <div class="py-3 text-center">
+                <h2>About me</h2>          
+              </div>
+              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="manikantasandeep" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/manikantasandeep?trk=profile-badge">Bala Sai Manikanta Sandeep Puppala</a></div>
+              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="manikantasandeep" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/manikantasandeep?trk=profile-badge">Bala Sai Manikanta Sandeep Puppala</a></div>
+              
+              <hr class="my-4">
+              <div class="col-md-12">
+                <div class="h-100 color-skb p-4 bg-light border rounded-3">
+                  
+                  <p>I am Puppala Bala Sai Manikanta Sandeep, currently pursuing BS in Data Science and its Applications from IIT Madras and Bachelor of Technology in Computer Science and Engineering from GITAM University. I am very much passionate about Machine Learning. And I have done few web applications like Library Management System, Blog Lite Application, Agro-Tech Application and Class Room Management System.<br><a href="https://www.linkedin.com/in/manikantasandeep/">Find out more...</a></p>
+                </div>
+              </div>
+              <hr class="my-4">
+              <div class="py-3 text-center">
+                <h2>About CRMS</h2>          
+              </div>
+              
+              <hr class="my-4">
+              <div class="col-md-12">
+                <div class="h-100 color-skb p-4 bg-light border rounded-3">
+                 
+                  <p>Classroom Management System is a software application that helps teachers to manage and organize their classroom activities. This Idea was given by Mr.Jayapal Sir who is the CSE faculty in GITAM University. This is the application where the faculty can quickly see the availability of the class rooms. And also the conflicts that can be arised from the current timetable with the rooms can also be detected easily.</p>
+                </div>
+              </div>
+              <hr class="my-4">
+              <div class="py-3 text-center">
+                <h2>Privacy Policy</h2>          
+              </div>
+              <hr class="my-4">
+              <div class="col-md-12">
+                <div class="h-100 color-skb p-4 bg-light border rounded-3">
+                  
+                  <p>
+                    1. Introduction: This privacy policy governs the use of the Classroom Management System Application (hereinafter referred to as "the Application"). The Application is developed to assist teachers in managing their classrooms.
+                  </p>
+                  <p>
+                    2. Collection of Personal Information: The Application may collect personal information such as names, email addresses, and phone numbers of teachers, students, and guardians. This information is collected to facilitate communication between teachers, students, and guardians.
+                  </p>
+                  <p>
+                    3. Use of Personal Information: The collected personal information will be used to provide the services offered by the Application and to improve the quality of the Application. The Application may also use the information for research and analysis purposes.
+                  </p>
+                  <p>
+                    4. Disclosure of Personal Information: The Application will not sell, trade, or rent personal information to third parties. The Application may share personal information with its affiliates and service providers for the purpose of providing the services offered by the Application. The Application may also disclose personal information if required by law.
+                  </p>
+                  <p>
+                    5. Security of Personal Information: The Application takes appropriate measures to protect the personal information collected from unauthorized access, disclosure, alteration, or destruction.
+                  </p>
+                  <p>
+                    6. Retention of Personal Information: The Application will retain personal information for as long as it is necessary to provide the services offered by the Application or as required by law.
+                  </p>
+                  <p>
+                    7. Changes to Privacy Policy: The Application may update this privacy policy from time to time. The Application will notify users of any changes to the privacy policy by posting the updated policy on the Application's website.
+                  </p>
+                  <p>
+                    8. Contact Information: If you have any questions or concerns regarding this privacy policy, please contact us at [insert email address].
+                  </p>
+                  <p>
+                    <b>Last updated: 5th February 2023.</b>
+                  </p>
+                </div>
+              </div>
+              <hr class="my-4">
+          </div>
+      
+        </div>
+      </div>
+      {% endif %}
+      {% if option==12 %}
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            {% if f==1 %}
+              <h1 class="fw-light">
+                Pattern Searched 
+              </h1>
+              <p class="lead text-muted">Search results for "{{ pattern }}"...</p>
+            {% else %}
+              <h1 class="fw-light">
+              All classes
+              </h1>
+              <p class="lead text-muted">Here you can see all the classes.</p>
+            
+            {% endif %}
+            <p>
+              <a href="/home" class="btn btn-primary my-2">Home</a>
+              <a href="/my_dashboard" class="btn btn-secondary my-2">Department Dashboard</a>
+            </p>
+          </div>
+        </div>
+      </section>
+        
+        <div class="container-fluid search-container">
+          
+            {% for data in d %}
+            <div class="row users-row" onclick="userFunction('{{ data[4] }}')">
+                
+                    <div class="col-4 image-con">
+                        <div onclick="userFunction()">
+                            {% if data[2]==-1 %}
+                            {% if data[3]==0 %}
+                            <img class="feed-user-image-p" src="/static/images/MAccount.jpg">
+                            {% else %}
+                            <img class="feed-user-image-p" src="/static/images/FAccount.jpg">
+                            {% endif %}
+                            {% else %}
+                            <img class="feed-user-image-p" src="data:;base64,{{ data[2] }}">
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="col-8" onclick="userFunction()">
+                        <div class="blog-user-name-sub">
+                            <b class="feed-name">{{ data[1] }}</b>
+                            <p class="post-subname text-truncate">{{ data[0] }}</p>
+                        </div>
+                    </div>
+                  <form class="" action="/user/{{ data[4] }}" id="user-form-{{data[4]}}"
+                     method="POST">
+                    <script>
+                        function userFunction(j) {
+                            document.getElementById("user-form-" + j).submit();
+                        }
+                    </script>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+   
+      {% endif %}
+      {% if option==13 %}
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+
+              <h1 class="fw-light">
+                My Class Groups
+              </h1>
+              <p class="lead text-muted">Here you can see and manage your Class Groups.</p>
+            
+            <p>
+              <a href="/home" class="btn btn-primary my-2">Home</a>
+              <a href="/my_dashboard" class="btn btn-secondary my-2">Go to Dashboard</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="container-fluid qnavigation2 px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Quick Navigation</h2>
+    
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-4">
+          {% if sid==1 %}
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+              <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+              <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+            </svg>    
+              
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Create a session</h3>
+              <a href="/add_classroom" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          
+          {% endif %}
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+              <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+              <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+            </svg>    
+              
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Add Class Group</h3>
+              <a href="/dashboard/add_class_group" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-box-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.004-.001.274-.11a.75.75 0 0 1 .558 0l.274.11.004.001 6.971 2.789Zm-1.374.527L8 5.962 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339Z"/>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">All Rooms today Schedule</h3>
+              <a href="/dashboard/all_rooms" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+            </div>
+    
+          <div class="col d-flex align-items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-wallet-fill" viewBox="0 0 16 16">
+            <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path d="M16 6.5h-5.551a2.678 2.678 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5c-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6z"/>
+          </svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4">All classes</h3>
+            <a href="/dashboard/all_classrooms" class="icon-link d-inline-flex align-items-center">
+              Click here
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+            </a>
+          </div>
+          </div>
+    
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4">Conflicts</h3>
+              <a href="/dashboard/all_conflicts" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="col d-flex align-items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>  
+          <div>
+              <h3 class="fw-bold mb-0 fs-4">Availability</h3>
+              <a href="/dashboard/availability/search" class="icon-link d-inline-flex align-items-center">
+                Click here
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    
+      <div class="album py-5 bg-light">
+        <div class="container make-fluid-cont">
+    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            
+            {% for i in data %}
+            <div class="col ">
+              <div class="card shadow-sm ">
+                <div class="card-body color-blue ">
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li><b>Class Group ID: </b> {{i[0]}}</li>
+                    <li><b>Class Group Name: </b> {{i[1]}}</li>
+                    <li><b>Faculty ID: </b><a href="/user/gid/{{i[2]}}">{{i[2]}}</a></li>
+                    <li><b>Description : </b> {{i[3]}}</li>
+                    <li class="text-truncate"><b>Email ID's: </b> {{i[4]}}</li>
+                    <li><b>Joined time: </b> {{i[5]}}</li>
+                    <li><b>Last Updated on: </b>{{i[6]}}</li>
+                   
+                  </ul>
+                  
+                 
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <form method="POST">
+                        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/view_class_group/{{i[0]}}">View</button>
+                    
+                        <button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/edit_class_group/{{i[0]}}">Edit</button>
+                        
+                      </form>
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+    
+           
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if option==14 %}
+        <section class="py-5 text-center container">
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              
+                
+                <h1 class="fw-light">
+                  Class Group {{data[1]}}
+                </h1>
+                <p class="lead text-muted">
+                  Here you can see the See the particular class group details.
+                  
+                </p>
+                
+              <p>
+                <a href="/home" class="btn btn-primary my-2">Home</a>
+                <a href="/dashboard/my_groups" class="btn btn-secondary my-2">Go to back</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      
+          
+      
+        <div class="container col-xxl-8 px-4 py-4">
+          
+          <div class="row flex-lg-row align-items-center g-5 py-5">
+            
+          
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+              {% for i in data %}
+              <div class="col">
+                <div class="card shadow-sm color-blue">
+                  
+                  <div class="card-body ">
+                   <ul class="list-unstyled mt-3 mb-4">
+                      <li><b>Class Group ID: </b> {{i[0]}}</li>
+                      <li><b>Class Group Name: </b> {{i[1]}}</li>
+                      <li><b>Faculty ID: </b><a href="/user/gid/{{i[2]}}">{{i[2]}}</a></li>
+                      <li><b>Description : </b> {{i[3]}}</li>
+                      <li><b>Email ID's: </b> {{i[4]}}</li>
+                      <li><b>Joined time: </b> {{i[5]}}</li>
+                      <li><b>Last Updated on: </b>{{i[6]}}</li>
+                    </ul>   
+                    <h3 class="fw-bold mb-0 fs-4">Created by <a href="/user/gid/{{i[2]}}">{{i[7]}}</a></h3>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                      
+                      <form method="POST">
+                        <button type="submit" class="btn btn-primary btn-lg px-4 me-md-2" formaction="/edit_class_group/{{i[0]}}" name="edit">Edit</button>
+                        
+                      </form>
+             
+                      <form method="POST">
+                   
+                        <button type="submit" class="btn btn-primary btn-lg px-4 me-md-2" formaction="/remove_class_group/{{i[0]}}" name="mv" value="{{i[0]}}">Remove</button>
+       
+                      </form>
+                      
+                     </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              
+            </div>
+          </div>
+      
+          <hr class="my-4">    
+          <h4 class="mb-3">Announce Now to this class</h4>
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <p class="lead text-muted">Here you can announce or send messages to your Class Groups through the above mentioned mails.</p>
+              
+              <p>
+                
+                <a href="/dashboard/make_an_announcement/{{data[0][0]}}" class="btn btn-secondary my-2">Make an Announcement</a>
+              </p>
+            </div>
+          </div>
+          <hr class="my-4">     
+          <h4 class="mb-3">Previous Announcements</h4>
+          
+          <div class="album py-5 bg-light">
+            <div class="container make-fluid-cont">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                
+                {% for i in an %}
+                <div class="col ">
+                  <div class="card shadow-sm ">
+                    <div class="card-body">
+                      <ul class="list-unstyled mt-3 mb-4">
+                      
+                        <li><b>Announcement Subject: </b> {{i[1]}}</li>
+                        <li><b>Announcement Date: </b> {{i[4]}}</li>
+                        <li><b>Announcement Description: </b></li>
+                        <li>{{i[3]}}</li>
+                      </ul> 
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+        
+              
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      {% endif %}
+      {% if option==15 %}
+      <div class="container-fluid">
+        <div class="container-fluid details-of-user">
+    
+          <div class="py-5 text-center">
+            <h2>Make an announcement</h2>
+            <p class="lead">Here you can announce a message to the class group <b>{{data[0]}}</b>.</p>
+          </div>
+      
+          <div class="row g-5 detail-row">
+            
+            <div class="col col-mid-8">
+              <h4 class="mb-3">Class Details</h4>
+              <form class="" method="POST" action="/make_announcement/{{data[3]}}" enctype="multipart/form-data">
+                <div class="row g-3">
+                  <p class="lead">You can send your message to these emails <b>{{data[1]}}</b></p>
+                  <p class="lead"><a href="/edit_class_group/{{data[3]}}">Click here to edit emails.</a></p>
+
+                  <div class="col-12">
+                    <label  class="form-label">Subject</label>
+                    <div class="input-group has-validation">
+                      <input type="text" class="form-control" placeholder="Subject" name="subject">                    </div>
+                  </div>
+                  
+                  
+                  <div class="col-12">
+                    <label  class="form-label">Message Body</label>
+                    <div class="input-group has-validation">
+                      <textarea class="form-control" aria-label="With textarea" placeholder="Message body" name="body" ></textarea>
+                      
+                    </div>
+                  </div>
+      
+      
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">Send message</button>
+                </div>
+      
+                
+              </form>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      {% endif %}
+
+    </main>
+    
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container foot">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/home" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/my_dashboard" class="nav-link px-2 text-muted">Dashboard</a></li>
+      <li class="nav-item"><a href="/account" class="nav-link px-2 text-muted">Profile</a></li>
+      <li class="nav-item"><a href="/contact" class="nav-link px-2 text-muted">Contact</a></li>
+      <li class="nav-item"><a href="/about" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4">
+      <p>&copy; 2023 CRMS, Inc. All rights reserved to Manikanta Puppala.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+          </svg>
+        </a></li>
+        <li class="ms-3"><a class="link-dark" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>
+        </a></li>
+        <li class="ms-3"><a class="link-dark" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg>
+        </a></li>
+        <li class="ms-3"><a class="link-dark" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+            <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
+          </svg>
+        </a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  
+        
+    </body>
+  </html>
+  
